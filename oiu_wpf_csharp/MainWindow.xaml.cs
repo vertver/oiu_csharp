@@ -25,8 +25,20 @@ namespace oiu_wpf_csharp
     {
         public MainWindow()
         {
+            this.MaxHeight = 540;
+            this.MaxWidth = 960;
+            this.MinHeight = 540;
+            this.MinWidth = 960;
             InitializeComponent();
         }
+
+        public new bool IsMouseOver { //For checking a mouse focus
+            get; 
+            
+
+
+        } 
+
 
         public partial class OpenFileDialogSample : Window
         {
@@ -35,6 +47,10 @@ namespace oiu_wpf_csharp
 
             }
             private void MenuItem_Click(object sender, RoutedEventArgs e)
+            {
+
+            }
+            private void MenuItem_Click2(object sender, RoutedEventArgs e)
             {
 
             }

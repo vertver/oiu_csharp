@@ -13,5 +13,6 @@ namespace oiu_wpf_csharp
     /// </summary>
     public partial class App : Application
     {
+        // Empty public class 
     }
 }

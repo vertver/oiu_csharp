@@ -5,6 +5,18 @@ VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "oiu_wpf_csharp", "oiu_wpf_csharp\oiu_wpf_csharp.csproj", "{28EDD39F-9E3B-42B5-A4B4-C4A1BE15E1EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAudio", "libs\NAudio-master\NAudio\NAudio.csproj", "{DA4F02E3-0B5E-42CD-B8D9-5583FA51D66E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAudioWpfDemo", "libs\NAudio-master\NAudioWpfDemo\NAudioWpfDemo.csproj", "{A7B74F85-D353-4ED4-A321-E6E4AD4D7D32}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries and other projects", "Libraries and other projects", "{2671630F-13E1-4AC6-8ADA-4941B8D30F36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MixDiff", "libs\NAudio-master\MixDiff\MixDiff.csproj", "{1293DD10-378A-4370-AEE2-AA1E9E87039B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioFileInspector", "libs\NAudio-master\AudioFileInspector\AudioFileInspector.csproj", "{D29C1659-635C-497B-847E-FE9A5A69ED03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAudioTests", "libs\NAudio-master\NAudioTests\NAudioTests.csproj", "{5080281A-F9A1-403F-85C7-0DFF6839B07B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +27,36 @@ Global
 		{28EDD39F-9E3B-42B5-A4B4-C4A1BE15E1EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28EDD39F-9E3B-42B5-A4B4-C4A1BE15E1EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28EDD39F-9E3B-42B5-A4B4-C4A1BE15E1EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA4F02E3-0B5E-42CD-B8D9-5583FA51D66E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA4F02E3-0B5E-42CD-B8D9-5583FA51D66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA4F02E3-0B5E-42CD-B8D9-5583FA51D66E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA4F02E3-0B5E-42CD-B8D9-5583FA51D66E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7B74F85-D353-4ED4-A321-E6E4AD4D7D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7B74F85-D353-4ED4-A321-E6E4AD4D7D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7B74F85-D353-4ED4-A321-E6E4AD4D7D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7B74F85-D353-4ED4-A321-E6E4AD4D7D32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1293DD10-378A-4370-AEE2-AA1E9E87039B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1293DD10-378A-4370-AEE2-AA1E9E87039B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1293DD10-378A-4370-AEE2-AA1E9E87039B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1293DD10-378A-4370-AEE2-AA1E9E87039B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D29C1659-635C-497B-847E-FE9A5A69ED03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D29C1659-635C-497B-847E-FE9A5A69ED03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D29C1659-635C-497B-847E-FE9A5A69ED03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D29C1659-635C-497B-847E-FE9A5A69ED03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5080281A-F9A1-403F-85C7-0DFF6839B07B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5080281A-F9A1-403F-85C7-0DFF6839B07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5080281A-F9A1-403F-85C7-0DFF6839B07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5080281A-F9A1-403F-85C7-0DFF6839B07B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DA4F02E3-0B5E-42CD-B8D9-5583FA51D66E} = {2671630F-13E1-4AC6-8ADA-4941B8D30F36}
+		{A7B74F85-D353-4ED4-A321-E6E4AD4D7D32} = {2671630F-13E1-4AC6-8ADA-4941B8D30F36}
+		{1293DD10-378A-4370-AEE2-AA1E9E87039B} = {2671630F-13E1-4AC6-8ADA-4941B8D30F36}
+		{D29C1659-635C-497B-847E-FE9A5A69ED03} = {2671630F-13E1-4AC6-8ADA-4941B8D30F36}
+		{5080281A-F9A1-403F-85C7-0DFF6839B07B} = {2671630F-13E1-4AC6-8ADA-4941B8D30F36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B7172D2-A5E3-48F1-96E0-ECF328205636}

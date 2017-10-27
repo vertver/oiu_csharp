@@ -5,29 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:oiu_wpf_csharp"
         mc:Ignorable="d"
-        Title="OIU Build 3" Height="380.266" Width="720.565"> <!--Build 3 WPF C#-->
+        Title="OIU Build 4" Height="540" Width="960">
+    <!--Build 3 WPF C#-->
 
-    <Grid>
+    <Grid ScrollViewer.VerticalScrollBarVisibility="Disabled">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="55*"/>
+            <ColumnDefinition Width="898*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Menu>
+        <Menu Grid.ColumnSpan="2" Margin="0,0,0,36">
             <MenuItem Header="File">
-                <MenuItem Header="New"></MenuItem>
-                <MenuItem Header="Open"></MenuItem>
-                <MenuItem Header="Save"></MenuItem>
+                <MenuItem Header="New"  InputGestureText="Ctrl + N"></MenuItem>
+                <MenuItem Header="Open"  InputGestureText="Ctrl + O"></MenuItem>
+                <MenuItem Header="Save"  InputGestureText="Ctrl + S"></MenuItem>
                 <MenuItem Header="Save As..."></MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Exit"></MenuItem>
+                <MenuItem Header="Exit"  InputGestureText="Alt + F4"></MenuItem>
             </MenuItem>
             <MenuItem Header="Edit">
-                <MenuItem Header="Undo"></MenuItem>
-                <MenuItem Header="Redo"></MenuItem>
+                <MenuItem Header="Options" InputGestureText="Ctrl + K"></MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Cut"></MenuItem>
-                <MenuItem Header="Copy"></MenuItem>
-                <MenuItem Header="Paste"></MenuItem>
+                <MenuItem Header="Copy"  InputGestureText="Ctrl + C"></MenuItem>
+                <MenuItem Header="Paste"  InputGestureText="Ctrl + V"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Undo"  InputGestureText="Ctrl + Z"></MenuItem>
+                <MenuItem Header="Redo"  InputGestureText="Ctrl + Y"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="File">
+                <MenuItem Header="About"  InputGestureText="Alt + Ctrl + ]"></MenuItem>
+                <MenuItem Header="Reset"  InputGestureText="Alt + Ctrl + Shift +  R"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="More..."></MenuItem>
             </MenuItem>
         </Menu>
     </Grid>
