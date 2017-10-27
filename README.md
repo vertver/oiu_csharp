@@ -1,6 +1,8 @@
 # oiu
 
-Free, open and progressive DAW. Written on C#
+DAW for everyone.
+
+Free, open and progressive DAW. Written on C#.
 
 ## Libs
 * -NAudio
@@ -15,5 +17,5 @@ Hpl1nk - Support <hplink@email.com>
 
 #### Why is it created?
 
-Because we wanted to create a beast DAW for the blogers
+We create our DAW for people, who didn't know a hard DAW's.
 
