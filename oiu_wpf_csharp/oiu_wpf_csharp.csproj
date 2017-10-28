@@ -14,6 +14,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -52,6 +52,12 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Jacobi.Vst.Core">
+      <HintPath>..\libs\VST.NET\Code\CLR2\AnyCPU\Release\Jacobi.Vst.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Jacobi.Vst.Framework">
+      <HintPath>..\libs\VST.NET\Code\CLR2\AnyCPU\Release\Jacobi.Vst.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -76,9 +82,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="WaveFormControl.xaml.cs">
-      <DependentUpon>WaveFormControl.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -87,33 +90,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="IModule.cs" />
-    <Compile Include="IWaveFormRenderer.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PolygonWaveFormControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PolylineWaveFormControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="WaveFormControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModuleBase.cs" />
-    <Compile Include="PolygonWaveFormControl.xaml.cs">
-      <DependentUpon>PolygonWaveFormControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PolylineWaveFormControl.xaml.cs">
-      <DependentUpon>PolylineWaveFormControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -150,6 +132,24 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\libs\NAudio-master\AudioFileInspector\AudioFileInspector.csproj">
+      <Project>{d29c1659-635c-497b-847e-fe9a5a69ed03}</Project>
+      <Name>AudioFileInspector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\NAudio-master\MixDiff\MixDiff.csproj">
+      <Project>{1293dd10-378a-4370-aee2-aa1e9e87039b}</Project>
+      <Name>MixDiff</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\NAudio-master\NAudioWpfDemo\NAudioWpfDemo.csproj">
+      <Project>{a7b74f85-d353-4ed4-a321-e6e4ad4d7d32}</Project>
+      <Name>NAudioWpfDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\NAudio-master\NAudio\NAudio.csproj">
+      <Project>{da4f02e3-0b5e-42cd-b8d9-5583fa51d66e}</Project>
+      <Name>NAudio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

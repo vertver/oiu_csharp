@@ -29,8 +29,8 @@ namespace AudioFileInspector
             {
                 Mp3WaveFormat wf = reader.Mp3WaveFormat;
                 stringBuilder.AppendFormat("MP3 File WaveFormat: {0} {1}Hz {2} channels {3} bits per sample\r\n",
-                    wf.Encoding, wf.SampleRate,
-                    wf.Channels, wf.BitsPerSample);
+                    wf.Encoding, wf.SampleRate, // Searching the sample rate and encode this
+                    wf.Channels, wf.BitsPerSample); // Like a (2 channels) + 16, 24, 32 (float) bits
                 stringBuilder.AppendFormat("Extra Size: {0} Block Align: {1} Average Bytes Per Second: {2}\r\n",
                     wf.ExtraSize, wf.BlockAlign,
                     wf.AverageBytesPerSecond);
