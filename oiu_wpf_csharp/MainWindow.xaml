@@ -6,20 +6,23 @@
         xmlns:local="clr-namespace:oiu_wpf_csharp"
         xmlns:NAudioWpfDemo="clr-namespace:NAudioWpfDemo" x:Class="oiu_wpf_csharp.MainWindow"
         mc:Ignorable="d"
-        Title="OIU Build 5" Height="540" Width="960">
+        Title="OIU Build 6" Height="540" Width="960">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Menu>
+        <Menu Margin="0,0,0,17.88">
             <MenuItem Header="File">
                 <MenuItem Header="New" InputGestureText="Ctrl + N"></MenuItem>
-                <MenuItem Header="Open" InputGestureText="Ctrl + O"></MenuItem>
-                <MenuItem Header="Save" InputGestureText="Ctrl + S"></MenuItem>
+                <MenuItem Header="Open" InputGestureText="Ctrl + O" Click="MenuItem_Click_Open"></MenuItem>
+                <MenuItem Header="Save" InputGestureText="Ctrl + S" Click="MenuItem_Click_Save"></MenuItem>
                 <MenuItem Header="Save As..."></MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Exit" InputGestureText="Alt + F4"></MenuItem>
+                <MenuItem Header="Exit" InputGestureText="Alt + F4" Click="MenuItem_Click_Exit"></MenuItem>
             </MenuItem>
             <MenuItem Header="Edit">
                 <MenuItem Header="Options" InputGestureText="Ctrl + K"></MenuItem>

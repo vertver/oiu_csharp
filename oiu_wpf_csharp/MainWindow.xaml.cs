@@ -35,10 +35,10 @@ namespace oiu_wpf_csharp
     {
         public MainWindow()
         {
-            this.MaxHeight = 540;
-            this.MaxWidth = 960;
             this.MinHeight = 540;
             this.MinWidth = 960;
+            Uri iconUri = new Uri(uriString: "../oiu.ico", uriKind: UriKind.RelativeOrAbsolute);
+            this.Icon = BitmapFrame.Create(iconUri);
             InitializeComponent();
         }
 
@@ -52,18 +52,45 @@ namespace oiu_wpf_csharp
 
         public partial class OpenFileDialogSample : Window
         {
-            public OpenFileDialogSample()
-            {
+            
 
-            }
-            private void MenuItem_Click(object sender, RoutedEventArgs e)
-            {
-
-            }
+           
             private void MenuItem_Click2(object sender, RoutedEventArgs e)
             {
 
             }
         }
+
+        private void MenuItem_Click_Open(object sender, RoutedEventArgs e)
+        {
+            // open a filedialog with option ".wav"
+            OpenFileDialog ofd = new OpenFileDialog();
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.DefaultExt = ".wav" ;
+            dlg.Filter = "WAV files (.wav)|*.wav";
+            Nullable<bool> result = dlg.ShowDialog();
+        
+
+        }
+
+        private void MenuItem_Click_Save(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog ofd = new SaveFileDialog();
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            dlg.DefaultExt = ".wav";
+            dlg.Filter = "WAV files (.wav)|*.wav";
+            Nullable<bool> result = dlg.ShowDialog();
+
+
+
+        }
+
+        private void MenuItem_Click_Exit(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
+        
+    
+
