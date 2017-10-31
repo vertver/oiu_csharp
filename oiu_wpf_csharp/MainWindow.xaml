@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:oiu_wpf_csharp"
-        xmlns:NAudioWpfDemo="clr-namespace:NAudioWpfDemo" x:Class="oiu_wpf_csharp.MainWindow"
+         x:Class="oiu_wpf_csharp.MainWindow"        
         mc:Ignorable="d"
-        Title="OIU Build 6" Height="540" Width="960">
+        Title="OIU Build 7" Height="540" Width="960">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -27,8 +27,7 @@
             <MenuItem Header="Edit">
                 <MenuItem Header="Options" InputGestureText="Ctrl + K"></MenuItem>
                 <Separator></Separator>
-                <MenuItem Header="Undo" InputGestureText="Ctrl + Z"></MenuItem>
-                <MenuItem Header="Redo" InputGestureText="Ctrl + Y"></MenuItem>
+                <MenuItem Header="VST" InputGestureText="Ctrl + Alt + /"></MenuItem>
                 <Separator></Separator>
                 <MenuItem Header="Copy" InputGestureText="Ctrl + C"></MenuItem>
                 <MenuItem Header="Paste" InputGestureText="Ctrl + V"></MenuItem>
@@ -40,6 +39,17 @@
                 <MenuItem Header="More"></MenuItem>
             </MenuItem>
         </Menu>
+        <ListBox Grid.Column="0" 
+                 ItemsSource="{Binding Modules}" 
+                 SelectedItem="{Binding SelectedModule, Mode=TwoWay}" Margin="0,18,752,0" Grid.RowSpan="2" IsSynchronizedWithCurrentItem="False">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+
     </Grid>
 
 </Window>

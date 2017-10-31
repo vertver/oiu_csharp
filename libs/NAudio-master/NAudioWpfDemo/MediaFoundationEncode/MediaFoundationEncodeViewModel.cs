@@ -23,6 +23,7 @@ namespace NAudioWpfDemo.MediaFoundationEncode
         private string inputFormat;
         private WaveFormat inputWaveFormat;
 
+
         public List<EncoderViewModel> OutputFormats { get; private set; }
         public List<MediaTypeViewModel> SupportedMediaTypes { get; private set; }
         public ICommand EncodeCommand { get; private set; }

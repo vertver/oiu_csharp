@@ -23,11 +23,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
+using SaveFileDialog = Microsoft.Win32.SaveFileDialog;
 using Microsoft.Win32;
+using Jacobi.Vst.Core.Plugin;
+using Jacobi.Vst.Framework;
+using Jacobi.Vst.Framework.Plugin;
+using NAudio.Dsp;
+using NAudio.Wave;
+using NAudioWpfDemo.AudioPlaybackDemo;
+using NAudioWpfDemo.Utils;
 
 
 namespace oiu_wpf_csharp
 {
+
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
@@ -64,33 +74,37 @@ namespace oiu_wpf_csharp
         private void MenuItem_Click_Open(object sender, RoutedEventArgs e)
         {
             // open a filedialog with option ".wav"
-            OpenFileDialog ofd = new OpenFileDialog();
+            var ofd = new OpenFileDialog();
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.DefaultExt = ".wav" ;
             dlg.Filter = "WAV files (.wav)|*.wav";
             Nullable<bool> result = dlg.ShowDialog();
+
         
 
         }
 
         private void MenuItem_Click_Save(object sender, RoutedEventArgs e)
         {
-            SaveFileDialog ofd = new SaveFileDialog();
+
+            var sfd = new SaveFileDialog();
             Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
             dlg.DefaultExt = ".wav";
             dlg.Filter = "WAV files (.wav)|*.wav";
             Nullable<bool> result = dlg.ShowDialog();
 
 
+        }   
 
-        }
+        // Ой крч в пизду мне на англе комменты писать, буду так
 
         private void MenuItem_Click_Exit(object sender, RoutedEventArgs e)
         {
-            Close();
+            Close(); // И ради этого создавать приватный воид?
         }
     }
 }
+
         
     
 
