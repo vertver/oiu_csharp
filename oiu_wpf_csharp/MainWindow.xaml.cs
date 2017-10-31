@@ -29,6 +29,7 @@ using Microsoft.Win32;
 using Jacobi.Vst.Core.Plugin;
 using Jacobi.Vst.Framework;
 using Jacobi.Vst.Framework.Plugin;
+using NAudio;
 using NAudio.Dsp;
 using NAudio.Wave;
 using NAudioWpfDemo.AudioPlaybackDemo;
@@ -52,19 +53,20 @@ namespace oiu_wpf_csharp
             InitializeComponent();
         }
 
-        public new bool IsMouseOver {      
-                                                
+        public new bool IsMouseOver
+        {
+
             get { return _contentLoaded; }          //For checking a mouse focus
 
-            
-        } 
+
+        }
 
 
         public partial class OpenFileDialogSample : Window
         {
-            
 
-           
+
+
             private void MenuItem_Click2(object sender, RoutedEventArgs e)
             {
 
@@ -76,13 +78,15 @@ namespace oiu_wpf_csharp
             // open a filedialog with option ".wav"
             var ofd = new OpenFileDialog();
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            dlg.DefaultExt = ".wav" ;
+            dlg.DefaultExt = ".wav";
             dlg.Filter = "WAV files (.wav)|*.wav";
             Nullable<bool> result = dlg.ShowDialog();
-
-        
-
         }
+
+        private NAudio.Wave.WaveFileReader wave = null;
+
+        private NAudio.Wave.DirectSoundOut output = null;
+
 
         private void MenuItem_Click_Save(object sender, RoutedEventArgs e)
         {
@@ -92,16 +96,58 @@ namespace oiu_wpf_csharp
             dlg.DefaultExt = ".wav";
             dlg.Filter = "WAV files (.wav)|*.wav";
             Nullable<bool> result = dlg.ShowDialog();
+            wave = new NAudio.Wave.WaveFileReader(dlg.FileName);
+            output = new NAudio.Wave.DirectSoundOut();
+            output.Init(new NAudio.Wave.WaveChannel32(wave));
+            output.Play();
 
-
-        }   
+        }
 
         // Ой крч в пизду мне на англе комменты писать, буду так
+
 
         private void MenuItem_Click_Exit(object sender, RoutedEventArgs e)
         {
             Close(); // И ради этого создавать приватный воид?
         }
+
+
+        // Простой обработчик данных - просто берет и проигрывает.
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var sfd = new OpenFileDialog();
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.DefaultExt = ".wav";
+            dlg.Filter = "WAV files (.wav)|*.wav";
+            Nullable<bool> result = dlg.ShowDialog();
+            // Давайте создадим условие, при котором если поле равно нулю, то мы его шлём нахуй.
+               
+            wave = new NAudio.Wave.WaveFileReader(dlg.FileName);
+            output = new NAudio.Wave.DirectSoundOut();
+            output.Init(new NAudio.Wave.WaveChannel32(wave));
+            output.Play();
+            
+        }
+
+        // Благодаря этой кнопке можно создавать подобные с разными функциями
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (output != null)
+            {
+                if (output.PlaybackState == NAudio.Wave.PlaybackState.Playing) output.Pause();
+                else if (output.PlaybackState == NAudio.Wave.PlaybackState.Paused) output.Play();
+            }
+        }
+
+        // Следовательно делаем подобную кнопку "Стоп"
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (output != null)
+            {
+                if (output.PlaybackState == NAudio.Wave.PlaybackState.Playing) output.Stop();
+            }
+        }
+        // Бля да я нахуй гений!
     }
 }
 

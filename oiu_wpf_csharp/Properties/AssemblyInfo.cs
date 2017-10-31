@@ -18,7 +18,7 @@ using System.Windows;
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
 [assembly: AssemblyTitle("OIU")]
-[assembly: AssemblyDescription("WPF C# build 3")]
+[assembly: AssemblyDescription("WPF C# build 8")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("OIU_DAW")]
@@ -61,5 +61,5 @@ using System.Windows;
 // Можно задать все значения или принять номер сборки и номер редакции по умолчанию.
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.0.2.7")]
-[assembly: AssemblyFileVersion("0.0.2.7")]
+[assembly: AssemblyVersion("0.0.2.8")]
+[assembly: AssemblyFileVersion("0.0.2.8")]
