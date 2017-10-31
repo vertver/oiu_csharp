@@ -81,6 +81,10 @@ namespace oiu_wpf_csharp
             dlg.DefaultExt = ".wav";
             dlg.Filter = "WAV files (.wav)|*.wav";
             Nullable<bool> result = dlg.ShowDialog();
+            wave = new NAudio.Wave.WaveFileReader(dlg.FileName);
+            output = new NAudio.Wave.DirectSoundOut();
+            output.Init(new NAudio.Wave.WaveChannel32(wave));
+            output.Play();
         }
 
         private NAudio.Wave.WaveFileReader wave = null;
@@ -95,12 +99,7 @@ namespace oiu_wpf_csharp
             Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
             dlg.DefaultExt = ".wav";
             dlg.Filter = "WAV files (.wav)|*.wav";
-            Nullable<bool> result = dlg.ShowDialog();
-            wave = new NAudio.Wave.WaveFileReader(dlg.FileName);
-            output = new NAudio.Wave.DirectSoundOut();
-            output.Init(new NAudio.Wave.WaveChannel32(wave));
-            output.Play();
-
+            Nullable<bool> result = dlg.ShowDialog(); 
         }
 
         // Ой крч в пизду мне на англе комменты писать, буду так

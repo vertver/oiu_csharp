@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:oiu_wpf_csharp"
          x:Class="oiu_wpf_csharp.MainWindow"        
         mc:Ignorable="d"
-        Title="OIU Build 8" Height="540" Width="960">
+        Title="OIU Build 9" Height="540" Width="960">
     <Window.InputBindings>
         <KeyBinding Command="{Binding SaveCommand}" Modifiers="Control" Gesture="Control+S"/>
     </Window.InputBindings>
