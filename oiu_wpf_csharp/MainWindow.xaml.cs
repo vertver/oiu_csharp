@@ -69,7 +69,7 @@ namespace oiu_wpf_csharp
 
             private void MenuItem_Click2(object sender, RoutedEventArgs e)
             {
-
+                // Бесполезный пункт меню, нормально толком не работает
             }
         }
 
@@ -85,6 +85,7 @@ namespace oiu_wpf_csharp
             output = new NAudio.Wave.DirectSoundOut();
             output.Init(new NAudio.Wave.WaveChannel32(wave));
             output.Play();
+
         }
 
         private NAudio.Wave.WaveFileReader wave = null;
@@ -94,12 +95,15 @@ namespace oiu_wpf_csharp
 
         private void MenuItem_Click_Save(object sender, RoutedEventArgs e)
         {
-
+            
             var sfd = new SaveFileDialog();
             Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
             dlg.DefaultExt = ".wav";
             dlg.Filter = "WAV files (.wav)|*.wav";
-            Nullable<bool> result = dlg.ShowDialog(); 
+            Nullable<bool> result = dlg.ShowDialog();
+            // Давайте создадим условие, при котором если поле равно нулю, то мы его шлём нахуй.
+            // Почините это пожайлуста Т.Т if (result == false) return;
+            // Очень полезный сейвдиалог (прям сука очень)
         }
 
         // Ой крч в пизду мне на англе комменты писать, буду так
@@ -114,12 +118,12 @@ namespace oiu_wpf_csharp
         // Простой обработчик данных - просто берет и проигрывает.
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var sfd = new OpenFileDialog();
+            var ofd = new OpenFileDialog();
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.DefaultExt = ".wav";
             dlg.Filter = "WAV files (.wav)|*.wav";
             Nullable<bool> result = dlg.ShowDialog();
-            // Давайте создадим условие, при котором если поле равно нулю, то мы его шлём нахуй.
+
                
             wave = new NAudio.Wave.WaveFileReader(dlg.FileName);
             output = new NAudio.Wave.DirectSoundOut();

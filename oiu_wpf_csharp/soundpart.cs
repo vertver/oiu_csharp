@@ -21,7 +21,7 @@ using NAudio.Wave;
 
 namespace sound
 { }
-    //Это всё - нерабочий код для плеера кнопки
+    // Это всё - код кнопки для WindowsForm
 
     /*private OpenFileDialog openFileDialog = null;
           private NAudio.Wave.IWavePlayer waveOutDevice;

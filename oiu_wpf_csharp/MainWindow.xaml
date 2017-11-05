@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:oiu_wpf_csharp"
+         xmlns:NAudioWpfDemo="clr-namespace:NAudioWpfDemo;assembly=NAudioWpfDemo"
          x:Class="oiu_wpf_csharp.MainWindow"        
         mc:Ignorable="d"
-        Title="OIU Build 9" Height="540" Width="960">
+        Title="OIU Alpha 0.10f" Height="540" Width="960">
     <Window.InputBindings>
         <KeyBinding Command="{Binding SaveCommand}" Modifiers="Control" Gesture="Control+S"/>
     </Window.InputBindings>
@@ -15,31 +16,31 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Menu Margin="0,0,0,17.88">
             <MenuItem Header="File">
-                <MenuItem Header="New" InputGestureText="Ctrl + N"></MenuItem>
-                <MenuItem Header="Open" InputGestureText="Ctrl + O" Click="MenuItem_Click_Open"></MenuItem>
-                <MenuItem Header="Save" InputGestureText="Ctrl + S" Command="{Binding SaveCommand}"></MenuItem>
-                <MenuItem Header="Save As..."  Click="MenuItem_Click_Save"></MenuItem>
-                <Separator></Separator>
-                <MenuItem Header="Exit" InputGestureText="Alt + F4" Click="MenuItem_Click_Exit"></MenuItem>
+                <MenuItem Header="New" InputGestureText="Ctrl + N"/>
+                <MenuItem Header="Open" InputGestureText="Ctrl + O" Click="MenuItem_Click_Open"/>
+                <MenuItem Header="Save" InputGestureText="Ctrl + S" Command="{Binding SaveCommand}"/>
+                <MenuItem Header="Save As..."  Click="MenuItem_Click_Save"/>
+                <Separator/>
+                <MenuItem Header="Exit" InputGestureText="Alt + F4" Click="MenuItem_Click_Exit"/>
             </MenuItem>
             <MenuItem Header="Edit">
-                <MenuItem Header="Options" InputGestureText="Ctrl + K"></MenuItem>
-                <Separator></Separator>
-                <MenuItem Header="VST" InputGestureText="Ctrl + Alt + /"></MenuItem>
-                <Separator></Separator>
-                <MenuItem Header="Copy" InputGestureText="Ctrl + C"></MenuItem>
-                <MenuItem Header="Paste" InputGestureText="Ctrl + V"></MenuItem>
+                <MenuItem Header="Options" InputGestureText="Ctrl + K"/>
+                <Separator/>
+                <MenuItem Header="VST" InputGestureText="Ctrl + Alt + /"/>
+                <Separator/>
+                <MenuItem Header="Copy" InputGestureText="Ctrl + C"/>
+                <MenuItem Header="Paste" InputGestureText="Ctrl + V"/>
             </MenuItem>
             <MenuItem Header="About">
-                <MenuItem Header="Help" InputGestureText="Ctrl + F1"></MenuItem>
-                <Separator></Separator>
-                <MenuItem Header="About"></MenuItem>
-                <MenuItem Header="More"></MenuItem>
+                <MenuItem Header="Help" InputGestureText="Ctrl + F1"/>
+                <Separator/>
+                <MenuItem Header="About"/>
+                <MenuItem Header="More"/>
             </MenuItem>
         </Menu>
         <ListBox Grid.Column="0" 
@@ -54,6 +55,7 @@
         <Button Content="" HorizontalAlignment="Left" Margin="205,432,0,0" VerticalAlignment="Top" Width="20" Click="Button_Click" Grid.Row="1"/>
         <Button Content="" HorizontalAlignment="Left" Margin="230,432,0,0" Grid.Row="1" VerticalAlignment="Top" Width="20" Click="Button_Click_1"/>
         <Button Content="" HorizontalAlignment="Left" Margin="255,432,0,0" Grid.Row="1" VerticalAlignment="Top" Width="20" Click="Button_Click_2"/>
+        
 
 
     </Grid>
