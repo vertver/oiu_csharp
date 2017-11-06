@@ -73,7 +73,14 @@ namespace oiu_wpf_csharp
              var ofd = new OpenFileDialog();
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.DefaultExt = ".mp3";
-            dlg.Filter = "MP3 files (.mp3)|*.mp3";
+            dlg.Filter = "All files|*.mp3; *.m4a; *.alac; *.ogg; *.flac; *.wma; *.wav"
+            + "|MP3 files (.mp3)|*.mp3"
+            + "|ALAC Files (*.alac)|*.alac"
+            + "|OGG Files (*.ogg)|*.ogg"
+            + "|FLAC Files (*.flac)|*.flac"
+            + "|WMA Files (*.wma)|*.wma"
+            + "|WAV Files (*.wav)|*.wav"
+            + "|AAC Files (*.m4a)|*.m4a";
             Nullable<bool> result = dlg.ShowDialog();
             if (dlg.ShowDialog() == false) { return; }
             Vars.Files.Add(dlg.FileName);
@@ -110,8 +117,14 @@ namespace oiu_wpf_csharp
         {
             var ofd = new OpenFileDialog();
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            dlg.DefaultExt = ".mp3";
-            dlg.Filter = "MP3 files (.mp3)|*.mp3";
+            dlg.Filter = "All files|*.mp3; *.m4a; *.alac; *.ogg; *.flac; *.wma; *.wav"
+            + "|MP3 files (.mp3)|*.mp3"
+            + "|ALAC Files (*.alac)|*.alac"
+            + "|OGG Files (*.ogg)|*.ogg"
+            + "|FLAC Files (*.flac)|*.flac"
+            + "|WMA Files (*.wma)|*.wma"
+            + "|WAV Files (*.wav)|*.wav"
+            + "|AAC Files (*.m4a)|*.m4a";
             Nullable<bool> result = dlg.ShowDialog();
             if (dlg.ShowDialog() == false) { return; }
             Vars.Files.Add(dlg.FileName);
