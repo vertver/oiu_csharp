@@ -1,0 +1,25 @@
+﻿<Window x:Class="oiu_wpf_csharp.Startup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oiu_wpf_csharp"
+        mc:Ignorable="d"
+        Title="Startup" Height="400" Width="800" ScrollViewer.VerticalScrollBarVisibility="Disabled" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Background>
+        <ImageBrush ImageSource="oiu_loader.png"/>
+    </Window.Background>
+    <Grid x:Name="Startup1" IsManipulationEnabled="True" MinHeight="400" MinWidth="800" RenderTransformOrigin="0.5,0.5" Margin="800,72,-546,-26">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform ScaleX="-1"/>
+                <SkewTransform/>
+                <RotateTransform Angle="-0.423"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+    </Grid>
+</Window>

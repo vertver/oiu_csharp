@@ -55,7 +55,8 @@
         <Button Content="" HorizontalAlignment="Left" Margin="205,432,0,0" VerticalAlignment="Top" Width="20" Click="Button_Click" Grid.Row="1"/>
         <Button Content="" HorizontalAlignment="Left" Margin="230,432,0,0" Grid.Row="1" VerticalAlignment="Top" Width="20" Click="Button_Click_1"/>
         <Button Content="" HorizontalAlignment="Left" Margin="255,432,0,0" Grid.Row="1" VerticalAlignment="Top" Width="20" Click="Button_Click_2"/>
-        
+        <Slider HorizontalAlignment="Left" Margin="205,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Maximum="100"/>
+
 
 
     </Grid>

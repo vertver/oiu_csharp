@@ -6,7 +6,7 @@ Free, open and progressive DAW. Written on C#.
 
 ## Libs
 * -NAudio
-
+* -Bass.NET (bass.dll, Bass.Net.dll)
 ### Contacts
 oiu.github.com - Main page
 

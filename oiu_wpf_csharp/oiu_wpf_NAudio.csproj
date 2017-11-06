@@ -140,14 +140,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\libs\NAudio-master\AudioFileInspector\AudioFileInspector.csproj">
-      <Project>{d29c1659-635c-497b-847e-fe9a5a69ed03}</Project>
-      <Name>AudioFileInspector</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\libs\NAudio-master\MixDiff\MixDiff.csproj">
-      <Project>{1293dd10-378a-4370-aee2-aa1e9e87039b}</Project>
-      <Name>MixDiff</Name>
-    </ProjectReference>
     <ProjectReference Include="..\libs\NAudio-master\NAudioWpfDemo\NAudioWpfDemo.csproj">
       <Project>{a7b74f85-d353-4ed4-a321-e6e4ad4d7d32}</Project>
       <Name>NAudioWpfDemo</Name>

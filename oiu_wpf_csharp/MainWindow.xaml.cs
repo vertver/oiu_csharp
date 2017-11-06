@@ -53,13 +53,8 @@ namespace oiu_wpf_csharp
             InitializeComponent();
         }
 
-        public new bool IsMouseOver
-        {
+       
 
-            get { return _contentLoaded; }          //For checking a mouse focus
-
-
-        }
 
 
         public partial class OpenFileDialogSample : Window
@@ -80,7 +75,11 @@ namespace oiu_wpf_csharp
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             dlg.DefaultExt = ".wav";
             dlg.Filter = "WAV files (.wav)|*.wav";
+         
             Nullable<bool> result = dlg.ShowDialog();
+            if (dlg.ShowDialog() == false) { return; }
+
+            
             wave = new NAudio.Wave.WaveFileReader(dlg.FileName);
             output = new NAudio.Wave.DirectSoundOut();
             output.Init(new NAudio.Wave.WaveChannel32(wave));
@@ -101,6 +100,8 @@ namespace oiu_wpf_csharp
             dlg.DefaultExt = ".wav";
             dlg.Filter = "WAV files (.wav)|*.wav";
             Nullable<bool> result = dlg.ShowDialog();
+            if (dlg.ShowDialog() == false) { return; }
+
             // Давайте создадим условие, при котором если поле равно нулю, то мы его шлём нахуй.
             // Почините это пожайлуста Т.Т if (result == false) return;
             // Очень полезный сейвдиалог (прям сука очень)
@@ -123,8 +124,9 @@ namespace oiu_wpf_csharp
             dlg.DefaultExt = ".wav";
             dlg.Filter = "WAV files (.wav)|*.wav";
             Nullable<bool> result = dlg.ShowDialog();
+            if (dlg.ShowDialog() == false) { return; }
 
-               
+
             wave = new NAudio.Wave.WaveFileReader(dlg.FileName);
             output = new NAudio.Wave.DirectSoundOut();
             output.Init(new NAudio.Wave.WaveChannel32(wave));
