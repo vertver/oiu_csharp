@@ -6,10 +6,11 @@ Free, open and progressive DAW. Written on C#.
 
 ## Libs
 * -NAudio
+* -Bass.NET
 
 # How to compile?
 
-Open the project in the VS2017, and u must install a .NET Framework 4.7.2 or newer. Before it click on the button "Start" and get compile this.
+Open the project in the VS2017, and u must install a .NET Framework 4.7.2 or newer. Before it click on the project "oiu_wpf_BASS.NET" and push the button "Start" for get compile this.
 
 # What about a specifications of DAW?
 
