@@ -18,7 +18,7 @@ using System.Windows;
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
 [assembly: AssemblyTitle("OIU")]
-[assembly: AssemblyDescription("WPF Alpha 0.11f")]
+[assembly: AssemblyDescription("WPF Alpha 0.12f")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("OIU_DAW")]
@@ -61,5 +61,5 @@ using System.Windows;
 // Можно задать все значения или принять номер сборки и номер редакции по умолчанию.
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.0.3.1")]
-[assembly: AssemblyFileVersion("0.0.3.1")]
+[assembly: AssemblyVersion("0.0.3.3")]
+[assembly: AssemblyFileVersion("0.0.3.3")]

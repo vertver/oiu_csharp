@@ -36,10 +36,11 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -89,10 +90,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FFT_display.xaml.cs">
+      <DependentUpon>FFT_display.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Spectrum.xaml.cs">
+      <DependentUpon>Spectrum.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\Commented.cs" />
+    <Compile Include="src\FFTAnalysis.cs" />
+    <Compile Include="src\FFTData.cs" />
     <Compile Include="src\Vars.cs" />
     <Compile Include="Startup.xaml.cs">
       <DependentUpon>Startup.xaml</DependentUpon>
     </Compile>
+    <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FFT_display.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -111,6 +132,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <Page Include="Spectrum.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -188,6 +213,11 @@
     <Content Include="bass_tta.dll" />
     <Content Include="bass_vst.dll" />
     <Content Include="bass_vst.h" />
+    <Resource Include="icon_pause.ico" />
+    <Resource Include="icon_play.ico" />
+    <Resource Include="icon_rec.ico" />
+    <Resource Include="icon_stop.ico" />
+    <Resource Include="icon_inject.ico" />
     <Content Include="OptimFROG.dll" />
     <Content Include="Scattle - Caution.mp3" />
     <SplashScreen Include="oiu_loader.png" />

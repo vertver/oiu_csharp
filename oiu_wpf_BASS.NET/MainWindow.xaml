@@ -7,19 +7,20 @@
          xmlns:NAudioWpfDemo="clr-namespace:NAudioWpfDemo;assembly=NAudioWpfDemo"
          x:Class="oiu_wpf_csharp.MainWindow"        
         mc:Ignorable="d"
-        Title="OIU Alpha 0.11f" Height="540" Width="960">
+        Title="OIU Alpha 0.12f" Height="540" Width="960" MinHeight="540" MinWidth="960" >
+
     <Window.InputBindings>
         <KeyBinding Command="{Binding SaveCommand}" Modifiers="Control" Gesture="Control+S"/>
     </Window.InputBindings>
-    <Grid>
+    <Grid Background="#FF191919">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="55"/>
-            <RowDefinition Height="454"/>
+            <RowDefinition Height="509"/>
+            <RowDefinition Height="0.333"/>
         </Grid.RowDefinitions>
-        <Menu Margin="0,0,0,37">
+        <Menu Margin="0,0,0,491">
             <MenuItem Header="File">
                 <MenuItem Header="New" InputGestureText="Ctrl + N"/>
                 <MenuItem Header="Open" InputGestureText="Ctrl + O" Click="MenuItem_Click_Open"/>
@@ -30,28 +31,68 @@
             </MenuItem>
             <MenuItem Header="Edit">
                 <MenuItem Header="Options" InputGestureText="Ctrl + K"/>
+                <MenuItem Header="FFT Analysis" InputGestureText="Alt + Z" Click="MenuItem_Click_FFTAnalysis" />
                 <Separator/>
                 <MenuItem Header="VST" InputGestureText="Ctrl + Alt + /"/>
                 <Separator/>
                 <MenuItem Header="Copy" InputGestureText="Ctrl + C"/>
                 <MenuItem Header="Paste" InputGestureText="Ctrl + V"/>
             </MenuItem>
-            <MenuItem Header="About">
+            <MenuItem Header="Help">
                 <MenuItem Header="Help" InputGestureText="Ctrl + F1"/>
                 <Separator/>
-                <MenuItem Header="About"/>
-                <MenuItem Header="More"/>
+                <MenuItem Header="More..."/>
+                <MenuItem Header="About" Click="MenuItem_Click_About"/>
             </MenuItem>
         </Menu>
-        <Button x:Name="Eject" Content="Eject" HorizontalAlignment="Left" Margin="210,17,0,0" VerticalAlignment="Top" Width="60" Click="Button_Click" RenderTransformOrigin="0.483,0.55" Grid.Row="1"/>
-        <Button x:Name="Play" Content="Play" HorizontalAlignment="Left" Margin="275,17,0,0" VerticalAlignment="Top" Width="60" Click="Button_Click_1" Grid.Row="1"/>
-        <Button x:Name="Stop" Content="Stop" HorizontalAlignment="Left" Margin="340,17,0,0" VerticalAlignment="Top" Width="60" Click="Button_Click_2" Grid.Row="1"/>
-        <Slider x:Name="slVol" HorizontalAlignment="Left" Margin="405,17,0,0" VerticalAlignment="Top" Width="100" Maximum="100" Height="20" ValueChanged="Slider_ValueChanged" Value="100" Grid.Row="1" SmallChange="1"/>
-        <Slider x:Name="slTime" HorizontalAlignment="Left" Margin="210,49,0,0" VerticalAlignment="Top" Width="295" ValueChanged="slTime_ValueChanged" Grid.RowSpan="2" Maximum="0"/>
-        <ListBox x:Name="playlist" HorizontalAlignment="Left" Height="476" Margin="10,23,0,0" VerticalAlignment="Top" Width="190" SelectionChanged="ListBox_SelectionChanged" Grid.RowSpan="2"/>
-        <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="210,23,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
-        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" Margin="405,23,0,0" VerticalAlignment="Top" Width="100"/>
 
+        <Button x:Name="Eject" Content="" HorizontalAlignment="Left" Margin="620,478,0,0" VerticalAlignment="Top" Width="16" Click="Button_Click" RenderTransformOrigin="0.483,0.55" Foreground="#FF9EB9B8" Height="16">
+            <Button.BorderBrush>
+                <ImageBrush/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <ImageBrush ImageSource="icon_inject.ico" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Play" Content="" HorizontalAlignment="Left" Margin="640,478,0,0" VerticalAlignment="Top" Width="16" Click="Button_Click_1" BorderBrush="#00000000" Height="16">
+            <Button.Foreground>
+                <ImageBrush/>
+            </Button.Foreground>
+            <Button.Background>
+                <ImageBrush ImageSource="icon_play.ico"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Stop" Content="" HorizontalAlignment="Left" Margin="662,478,0,0" VerticalAlignment="Top" Width="16" Click="Button_Click_2" Foreground="#FF9EB9B8" Height="16">
+            <Button.Background>
+                <ImageBrush ImageSource="icon_stop.ico"/>
+            </Button.Background>
+            <Button.BorderBrush>
+                <ImageBrush/>
+            </Button.BorderBrush>
+        </Button>
+        <ProgressBar x:Name="progressBarPeakLeft" HorizontalAlignment="Left" Height="24" Margin="235,398,0,0" VerticalAlignment="Top" Width="452" Foreground="#FF06B089" Background="#FF191919" BorderBrush="#FF3C3C3C" RenderTransformOrigin="0.5,0.5" Maximum="32768" ValueChanged="progressBarLeft_ValueChanged">
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <TranslateTransform X="-11" Y="11"/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+        <ProgressBar x:Name="progressBarPeakRight" HorizontalAlignment="Left" Height="24" Margin="213,444,0,0" VerticalAlignment="Top" Width="452" RenderTransformOrigin="0.5,0.5" Foreground="#FF06B089" Background="#FF191919" BorderBrush="#FF3C3C3C" Maximum="32768">
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <TranslateTransform X="11" Y="-11"/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+        <Slider x:Name="slVol" HorizontalAlignment="Left" Margin="219,458,0,0" VerticalAlignment="Top" Width="100" Maximum="100" Height="20" ValueChanged="Slider_ValueChanged" Value="100" SmallChange="1" Foreground="#FF138580"/>
+        <Slider x:Name="slTime" HorizontalAlignment="Left" Margin="272,478,0,0" VerticalAlignment="Top" Width="295" ValueChanged="slTime_ValueChanged" Maximum="0"/>
+        <ListBox x:Name="playlist" HorizontalAlignment="Left" Width="200" SelectionChanged="ListBox_SelectionChanged" Background="#FF212121" BorderBrush="#FF191919" Foreground="White" Margin="0,18,0,0"/>
+        <Label x:Name="label1" Content="00:00:00" HorizontalAlignment="Left" Margin="218,473,0,0" VerticalAlignment="Top" Width="100" Height="30" Foreground="#FF138580"/>
+        <Label x:Name="label2" Content="00:00:00" HorizontalAlignment="Left" Margin="566,473,0,0" VerticalAlignment="Top" Width="56" Foreground="#FF138580"/>
 
 
     </Grid>
