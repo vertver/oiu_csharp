@@ -124,7 +124,7 @@ namespace oiu_wpf_csharp
             
         }
 
-        public static int getfft(int stream)
+        public static int Getfft(int stream)
         {
             string filepath = "";
             int handle = Bass.BASS_StreamCreateFile(filepath, 0, 0, BASSFlag.BASS_SAMPLE_FLOAT);
